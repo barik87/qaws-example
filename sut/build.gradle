@@ -1,0 +1,23 @@
+
+ext.springBootVersion ='2.0.3.RELEASE'
+
+apply plugin: 'war'
+
+group 'com.example'
+version '1.0'
+
+sourceCompatibility = 1.8
+
+war {
+    archiveName = 'sut.war'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat:${springBootVersion}")
+    testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+}
