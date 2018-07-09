@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <title>SUT</title>
+</head>
+<body class="bg-light">
+<div class="container">
+    <h1 class="py-3">System Under Test</h1>
+
+    <h4 class="pt-3 pb-2">Save text to file</h4>
+    This would save the file with text <b>"Text: your_text"</b> to the path:
+    <br><code>"javax.servlet.context.tempdir"/sut/sut-file.txt</code><br><br>
+    <form class="form-inline">
+        <div class="form-group mr-sm-3 mb-2">
+            <input class="form-control" id="text-to-save" placeholder="" type="text">
+        </div>
+        <button type="button" class="btn btn-primary mb-2" id="btn-save-file">Save</button>
+        <div class="form-group mx-sm-3 mb-2">
+            <input readonly="" id="save-confirm" value="" class="form-control-plaintext" type="text">
+        </div>
+    </form>
+
+    <h4 class="pt-3 pb-2">Read text from file</h4>
+    <form class="form-inline">
+        <button type="button" class="btn btn-primary mb-2" id="btn-read-file">Read file</button>
+        <div class="form-group mx-sm-3 mb-2">
+            <input readonly="" id="read-confirm" value="" class="form-control" type="text">
+        </div>
+    </form>
+</div>
+
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="http://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="js/sut.js"></script>
+</body>
+</html>
