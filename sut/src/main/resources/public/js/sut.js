@@ -35,3 +35,52 @@ $( "#btn-read-file" ).click(function() {
         }
     });
 });
+
+// get weather
+$( "#btn-get-weather" ).click(function() {
+    $.ajax({
+        url: 'weather/' + $( "#weather-city" ).val(),
+        type: 'GET',
+        success: function(data){
+            $( "#weather-result-temp" ).val(data.temperature);
+            $( "#weather-result-descr" ).val(data.description);
+        },
+        error: function(data){
+            $( "#weather-error" ).val(data.responseJSON.description);
+        }
+    });
+});
+
+$( "#weather-city" ).keypress(function() {
+    $( "#weather-result-temp" ).val("");
+    $( "#weather-result-descr" ).val("");
+    $( "#weather-error" ).val("");
+});
+
+// send message
+$( "#btn-msg-send" ).click(function() {
+    $.ajax({
+        url: 'message/send',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({ "sender": $( "#msg-sender" ).val(), "text": $( "#msg-text" ).val() }),
+        success: function(data) {
+            $( "#msg-result" ).addClass("text-success");
+            $( "#msg-result" ).val(data);
+        },
+        error: function(data){
+            $( "#msg-result" ).addClass("text-danger");
+            $( "#msg-result" ).val(data.message);
+        }
+    });
+});
+
+$( "#msg-sender" ).keypress(function() {
+    $( "#msg-result" ).removeClass("text-success text-danger");
+    $( "#msg-result" ).val("");
+});
+
+$( "#msg-text" ).keypress(function() {
+    $( "#msg-result" ).removeClass("text-success text-danger");
+    $( "#msg-result" ).val("");
+});

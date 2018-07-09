@@ -30,6 +30,41 @@
             <input readonly="" id="read-confirm" value="" class="form-control" type="text">
         </div>
     </form>
+
+    <hr class="my-4">
+    <h4 class="pt-2 pb-2">Weather in the city</h4>
+    <form class="form-inline">
+        <div class="form-group mr-sm-3 mb-2">
+            <input class="form-control" id="weather-city" placeholder="City" type="text">
+        </div>
+        <button type="button" class="btn btn-primary mb-2" id="btn-get-weather">Get weather</button>
+        <div class="form-group mx-sm-3 mb-2">
+            <input readonly="" id="weather-error" value="" class="form-control-plaintext text-danger" type="text">
+        </div>
+    </form>
+    <div class="form-group col-4 pl-0 mb-2">
+        <label for="weather-result-temp">Temperature, C: </label>
+        <input readonly="" id="weather-result-temp" value="" class="form-control" type="text">
+    </div>
+    <div class="form-group col-4 pl-0 mb-2">
+        <label for="weather-result-descr">Description: </label>
+        <input readonly="" id="weather-result-descr" value="" class="form-control" type="text">
+    </div>
+
+    <hr class="mt-4 mb-4">
+    <h4 class="pt-2 pb-2">Send message</h4>
+    <form class="form-inline">
+        <div class="form-group mr-sm-3 mb-2">
+            <input class="form-control" id="msg-sender" placeholder="Sender" type="text">
+        </div>
+        <div class="form-group mr-sm-3 mb-2">
+            <input class="form-control" id="msg-text" placeholder="Text" type="text">
+        </div>
+        <button type="button" class="btn btn-primary mb-2" id="btn-msg-send">Send</button>
+        <div class="form-group mx-sm-4 mb-2">
+            <input readonly="" id="msg-result" value="" class="form-control-plaintext text-success" type="text">
+        </div>
+    </form>
 </div>
 
 <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
