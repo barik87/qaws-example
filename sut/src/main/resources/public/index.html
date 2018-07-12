@@ -33,6 +33,8 @@
 
     <hr class="my-4">
     <h4 class="pt-2 pb-2">Weather in the city</h4>
+    Gets the current weather for the city calling <a href="http://api.openweathermap.org/data/2.5/weather?q=Kyiv&appid=6917b279411dff54c9288b0d53f46d5c" target="_blank">this request</a>.
+    <br><br>
     <form class="form-inline">
         <div class="form-group mr-sm-3 mb-2">
             <input class="form-control" id="weather-city" placeholder="City" type="text">
@@ -53,6 +55,8 @@
 
     <hr class="mt-4 mb-4">
     <h4 class="pt-2 pb-2">Send message</h4>
+    Sends POST request to <code>http://localhost:8080/messenger/msg/send</code> with body <code>{"sender": "string", "text": "string"}</code>
+    <br><br>
     <form class="form-inline">
         <div class="form-group mr-sm-3 mb-2">
             <input class="form-control" id="msg-sender" placeholder="Sender" type="text">
