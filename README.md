@@ -1,4 +1,4 @@
-# qaws-example
+# QAWS example
 Example of using QA Web Services.  
   
 In this repo you may find:  
