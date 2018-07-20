@@ -30,7 +30,7 @@ You can explore the application at [http://localhost:8080/sut](http://localhost:
 
 ### Deploying QAWS and running tests
 Here is how QAWS is integrated into the infrastructure with the SUT and automated tests:  
-![SUT in production](.img/qaws_2.png)   
+![SUT with QAWS and automated tests](.img/qaws_2.png)   
 
 Start from building QAWS with Gradle wrapper:
 ```
@@ -40,7 +40,7 @@ gradlew build
 Then copy war file from `qaws/build/libs/qaws.war` to `<tomcat_dir>/webapps` directory.  
 Check that QAWS are there at [http://localhost:8080/qaws](http://localhost:8080/qaws/).  
 Update the SUT properties file
-[sut/src/main/resources/application.properties](https://github.com/barik87/qaws-example/blob/master/sut/src/main/resources/application.properties)
+[sut/src/main/resources/application.properties](sut/src/main/resources/application.properties)
 according to the comments there, so that SUT would be pointed at QAWS endpoints instead of the real world.  
   
 Now you can run automated tests:
@@ -64,5 +64,5 @@ dependencies {
     compile("io.springfox:springfox-swagger-ui:${swaggerVersion}")
     ...
 ```
-- added [SwaggerConfig](https://github.com/barik87/qaws-example/blob/master/qaws/src/main/java/com/example/qaws/swagger/SwaggerConfig.java) class with its content
+- added [SwaggerConfig](qaws/src/main/java/com/example/qaws/swagger/SwaggerConfig.java) class with its content
 Check out available QAWS API at: [http://localhost:8080/qaws/swagger-ui.html](http://localhost:8080/qaws/swagger-ui.html)
