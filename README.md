@@ -9,12 +9,15 @@ In this repo you may find:
 Sorry, you won't find any TAF layers, just simple straightforward tests.
 The purpose of these examples is just to show how to work with QAWS.
 
-#### Before trying it out
+### Before trying it out
 - Make sure you have Java 8 (JDK) installed and `JAVA_HOME` variable is pointed at you JDK directory;
 - Make sure you have downloaded and unzipped [Tomcat](https://tomcat.apache.org/download-80.cgi)
 somewhere on your machine and set `CATALINA_HOME` environment variable to that directory.  
 
-#### Running SUT
+### Running SUT
+Here is what SUT functions look like on the diagram:  
+![SUT in production](.img/qaws_1.png)   
+
 To run the SUT application build it with Gradle wrapper like this:
 ```
 cd sut
@@ -25,7 +28,10 @@ Then copy war files from `sut/build/libs/sut.war` and `messenger/build/libs/mess
 Then start Tomcat by executing the file `<tomcat_dir>/bin/startup.bat`.
 You can explore the application at [http://localhost:8080/sut](http://localhost:8080/sut/).  
 
-#### Deploying QAWS and running tests
+### Deploying QAWS and running tests
+Here is how QAWS is integrated into the infrastructure with the SUT and automated tests:  
+![SUT in production](.img/qaws_2.png)   
+
 Start from building QAWS with Gradle wrapper:
 ```
 cd qaws
@@ -43,7 +49,7 @@ cd automated-tests
 gradlew test
 ```
 
-#### Swagger UI for QAWS
+### Swagger UI for QAWS
 Swagger UI makes your API visible and pretty.
 This is what was done to use Swagger UI in QAWS:
 - added couple dependencies to the `build.gradle` file:
@@ -60,4 +66,3 @@ dependencies {
 ```
 - added [SwaggerConfig](https://github.com/barik87/qaws-example/blob/master/qaws/src/main/java/com/example/qaws/swagger/SwaggerConfig.java) class with its content
 Check out available QAWS API at: [http://localhost:8080/qaws/swagger-ui.html](http://localhost:8080/qaws/swagger-ui.html)
- 
