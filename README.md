@@ -64,5 +64,6 @@ dependencies {
     compile("io.springfox:springfox-swagger-ui:${swaggerVersion}")
     ...
 ```
-- added [SwaggerConfig](qaws/src/main/java/com/example/qaws/swagger/SwaggerConfig.java) class with its content
+- added [SwaggerConfig](qaws/src/main/java/com/example/qaws/swagger/SwaggerConfig.java) class with its content  
+
 Check out available QAWS API at: [http://localhost:8080/qaws/swagger-ui.html](http://localhost:8080/qaws/swagger-ui.html)
