@@ -26,11 +26,13 @@ import io.restassured.response.Response;
 
 public class Tests {
     private long testStartTime;
+    private static final String SUT_URL = System.getProperty("sut.url", "http://localhost:8080/sut");
+    private static final String QAWS_URL = System.getProperty("qaws.url", "http://localhost:8080/qaws");
 
     @BeforeMethod
     public void setUp() {
-        open("http://localhost:8080/sut");
-        RestAssured.baseURI = "http://localhost:8080/qaws";
+        open(SUT_URL);
+        RestAssured.baseURI = QAWS_URL;
         testStartTime = System.currentTimeMillis();
     }
 
