@@ -1,0 +1,10 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'cd automated-tests\nchmod 755 gradlew\n./gradlew testClasses'
+            }
+        }
+    }
+}
