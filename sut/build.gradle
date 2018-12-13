@@ -16,7 +16,7 @@ war {
 }
 
 repositories {
-    mavenCentral()
+    jcenter()
 }
 
 dependencies {

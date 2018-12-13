@@ -1,3 +1,10 @@
+ext {
+    testNgVersion = '6.11'
+    selenideVersion = '4.12.2'
+    restAssuredVersion = '3.1.0'
+    assertJVersion = '3.10.0'
+}
+
 apply plugin: 'java'
 
 group 'com.example'
@@ -10,10 +17,10 @@ repositories {
 }
 
 dependencies {
-    compile group: 'org.testng', name: 'testng', version: '6.11'
-    compile group: 'com.codeborne', name: 'selenide', version: '4.12.2'
-    compile group: 'io.rest-assured', name: 'rest-assured', version: '3.1.0'
-    compile group: 'org.assertj', name: 'assertj-core', version: '3.10.0'
+    compile("org.testng:testng:${testNgVersion}")
+    compile("com.codeborne:selenide:${selenideVersion}")
+    compile("io.rest-assured:rest-assured:${restAssuredVersion}")
+    compile("org.assertj:assertj-core:${assertJVersion}")
 }
 
 test {
